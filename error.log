@@ -118,3 +118,255 @@ Error: no open connections
     at session (D:\node\myblog\node_modules\express-session\index.js:356:11)
     at Layer.handle [as handle_request] (D:\node\myblog\node_modules\express\lib\router\layer.js:82:5)
     at trim_prefix (D:\node\myblog\node_modules\express\lib\router\index.js:271:13)
+[Tue Jan 05 2016 12:25:18 GMT+1100 (AUS Eastern Daylight Time)] /stylesheets/style.css
+Error: Cannot determine state of server
+    at canCheckoutReader (C:\Users\hchen\newblog\node_modules\connect-mongo\node_modules\mongodb\lib\mongodb\connection\server.js:767:12)
+    at Server.checkoutReader (C:\Users\hchen\newblog\node_modules\connect-mongo\node_modules\mongodb\lib\mongodb\connection\server.js:779:16)
+    at Cursor.nextObject (C:\Users\hchen\newblog\node_modules\connect-mongo\node_modules\mongodb\lib\mongodb\cursor.js:720:48)
+    at Cursor.nextObject (C:\Users\hchen\newblog\node_modules\connect-mongo\node_modules\mongodb\lib\mongodb\scope.js:22:20)
+    at Collection.findOne (C:\Users\hchen\newblog\node_modules\connect-mongo\node_modules\mongodb\lib\mongodb\collection\query.js:145:10)
+    at C:\Users\hchen\newblog\node_modules\connect-mongo\lib\connect-mongo.js:215:18
+    at C:\Users\hchen\newblog\node_modules\connect-mongo\lib\connect-mongo.js:165:27
+    at C:\Users\hchen\newblog\node_modules\connect-mongo\node_modules\mongodb\lib\mongodb\db.js:1404:28
+    at C:\Users\hchen\newblog\node_modules\connect-mongo\node_modules\mongodb\lib\mongodb\db.js:1542:30
+    at C:\Users\hchen\newblog\node_modules\connect-mongo\node_modules\mongodb\lib\mongodb\cursor.js:159:22
+[Tue Jan 05 2016 13:50:42 GMT+1100 (AUS Eastern Daylight Time)] /post
+Error: request entity too large
+    at makeError (C:\Users\hchen\newblog\node_modules\body-parser\node_modules\raw-body\index.js:184:15)
+    at module.exports (C:\Users\hchen\newblog\node_modules\body-parser\node_modules\raw-body\index.js:40:15)
+    at read (C:\Users\hchen\newblog\node_modules\body-parser\lib\read.js:62:3)
+    at urlencodedParser (C:\Users\hchen\newblog\node_modules\body-parser\lib\types\urlencoded.js:84:5)
+    at Layer.handle [as handle_request] (C:\Users\hchen\newblog\node_modules\express\lib\router\layer.js:82:5)
+    at trim_prefix (C:\Users\hchen\newblog\node_modules\express\lib\router\index.js:271:13)
+    at C:\Users\hchen\newblog\node_modules\express\lib\router\index.js:238:9
+    at Function.proto.process_params (C:\Users\hchen\newblog\node_modules\express\lib\router\index.js:313:12)
+    at C:\Users\hchen\newblog\node_modules\express\lib\router\index.js:229:12
+    at Function.match_layer (C:\Users\hchen\newblog\node_modules\express\lib\router\index.js:296:3)
+[Tue Jan 05 2016 13:51:04 GMT+1100 (AUS Eastern Daylight Time)] /post
+Error: request entity too large
+    at makeError (C:\Users\hchen\newblog\node_modules\body-parser\node_modules\raw-body\index.js:184:15)
+    at module.exports (C:\Users\hchen\newblog\node_modules\body-parser\node_modules\raw-body\index.js:40:15)
+    at read (C:\Users\hchen\newblog\node_modules\body-parser\lib\read.js:62:3)
+    at urlencodedParser (C:\Users\hchen\newblog\node_modules\body-parser\lib\types\urlencoded.js:84:5)
+    at Layer.handle [as handle_request] (C:\Users\hchen\newblog\node_modules\express\lib\router\layer.js:82:5)
+    at trim_prefix (C:\Users\hchen\newblog\node_modules\express\lib\router\index.js:271:13)
+    at C:\Users\hchen\newblog\node_modules\express\lib\router\index.js:238:9
+    at Function.proto.process_params (C:\Users\hchen\newblog\node_modules\express\lib\router\index.js:313:12)
+    at C:\Users\hchen\newblog\node_modules\express\lib\router\index.js:229:12
+    at Function.match_layer (C:\Users\hchen\newblog\node_modules\express\lib\router\index.js:296:3)
+[Tue Jan 05 2016 16:26:07 GMT+1100 (AUS Eastern Daylight Time)] /
+TypeError: Cannot read property 'name' of null
+    at C:\Users\hchen\newblog\routes\index.js:12:33
+    at Layer.handle [as handle_request] (C:\Users\hchen\newblog\node_modules\express\lib\router\layer.js:82:5)
+    at next (C:\Users\hchen\newblog\node_modules\express\lib\router\route.js:100:13)
+    at Route.dispatch (C:\Users\hchen\newblog\node_modules\express\lib\router\route.js:81:3)
+    at Layer.handle [as handle_request] (C:\Users\hchen\newblog\node_modules\express\lib\router\layer.js:82:5)
+    at C:\Users\hchen\newblog\node_modules\express\lib\router\index.js:235:24
+    at Function.proto.process_params (C:\Users\hchen\newblog\node_modules\express\lib\router\index.js:313:12)
+    at C:\Users\hchen\newblog\node_modules\express\lib\router\index.js:229:12
+    at Function.match_layer (C:\Users\hchen\newblog\node_modules\express\lib\router\index.js:296:3)
+    at next (C:\Users\hchen\newblog\node_modules\express\lib\router\index.js:190:10)
+[Tue Jan 05 2016 16:26:16 GMT+1100 (AUS Eastern Daylight Time)] /
+TypeError: Cannot read property 'name' of null
+    at C:\Users\hchen\newblog\routes\index.js:12:33
+    at Layer.handle [as handle_request] (C:\Users\hchen\newblog\node_modules\express\lib\router\layer.js:82:5)
+    at next (C:\Users\hchen\newblog\node_modules\express\lib\router\route.js:100:13)
+    at Route.dispatch (C:\Users\hchen\newblog\node_modules\express\lib\router\route.js:81:3)
+    at Layer.handle [as handle_request] (C:\Users\hchen\newblog\node_modules\express\lib\router\layer.js:82:5)
+    at C:\Users\hchen\newblog\node_modules\express\lib\router\index.js:235:24
+    at Function.proto.process_params (C:\Users\hchen\newblog\node_modules\express\lib\router\index.js:313:12)
+    at C:\Users\hchen\newblog\node_modules\express\lib\router\index.js:229:12
+    at Function.match_layer (C:\Users\hchen\newblog\node_modules\express\lib\router\index.js:296:3)
+    at next (C:\Users\hchen\newblog\node_modules\express\lib\router\index.js:190:10)
+[Tue Jan 05 2016 16:26:20 GMT+1100 (AUS Eastern Daylight Time)] /
+TypeError: Cannot read property 'name' of null
+    at C:\Users\hchen\newblog\routes\index.js:12:33
+    at Layer.handle [as handle_request] (C:\Users\hchen\newblog\node_modules\express\lib\router\layer.js:82:5)
+    at next (C:\Users\hchen\newblog\node_modules\express\lib\router\route.js:100:13)
+    at Route.dispatch (C:\Users\hchen\newblog\node_modules\express\lib\router\route.js:81:3)
+    at Layer.handle [as handle_request] (C:\Users\hchen\newblog\node_modules\express\lib\router\layer.js:82:5)
+    at C:\Users\hchen\newblog\node_modules\express\lib\router\index.js:235:24
+    at Function.proto.process_params (C:\Users\hchen\newblog\node_modules\express\lib\router\index.js:313:12)
+    at C:\Users\hchen\newblog\node_modules\express\lib\router\index.js:229:12
+    at Function.match_layer (C:\Users\hchen\newblog\node_modules\express\lib\router\index.js:296:3)
+    at next (C:\Users\hchen\newblog\node_modules\express\lib\router\index.js:190:10)
+[Tue Jan 05 2016 16:26:22 GMT+1100 (AUS Eastern Daylight Time)] /
+TypeError: Cannot read property 'name' of null
+    at C:\Users\hchen\newblog\routes\index.js:12:33
+    at Layer.handle [as handle_request] (C:\Users\hchen\newblog\node_modules\express\lib\router\layer.js:82:5)
+    at next (C:\Users\hchen\newblog\node_modules\express\lib\router\route.js:100:13)
+    at Route.dispatch (C:\Users\hchen\newblog\node_modules\express\lib\router\route.js:81:3)
+    at Layer.handle [as handle_request] (C:\Users\hchen\newblog\node_modules\express\lib\router\layer.js:82:5)
+    at C:\Users\hchen\newblog\node_modules\express\lib\router\index.js:235:24
+    at Function.proto.process_params (C:\Users\hchen\newblog\node_modules\express\lib\router\index.js:313:12)
+    at C:\Users\hchen\newblog\node_modules\express\lib\router\index.js:229:12
+    at Function.match_layer (C:\Users\hchen\newblog\node_modules\express\lib\router\index.js:296:3)
+    at next (C:\Users\hchen\newblog\node_modules\express\lib\router\index.js:190:10)
+[Tue Jan 05 2016 16:26:23 GMT+1100 (AUS Eastern Daylight Time)] /
+TypeError: Cannot read property 'name' of null
+    at C:\Users\hchen\newblog\routes\index.js:12:33
+    at Layer.handle [as handle_request] (C:\Users\hchen\newblog\node_modules\express\lib\router\layer.js:82:5)
+    at next (C:\Users\hchen\newblog\node_modules\express\lib\router\route.js:100:13)
+    at Route.dispatch (C:\Users\hchen\newblog\node_modules\express\lib\router\route.js:81:3)
+    at Layer.handle [as handle_request] (C:\Users\hchen\newblog\node_modules\express\lib\router\layer.js:82:5)
+    at C:\Users\hchen\newblog\node_modules\express\lib\router\index.js:235:24
+    at Function.proto.process_params (C:\Users\hchen\newblog\node_modules\express\lib\router\index.js:313:12)
+    at C:\Users\hchen\newblog\node_modules\express\lib\router\index.js:229:12
+    at Function.match_layer (C:\Users\hchen\newblog\node_modules\express\lib\router\index.js:296:3)
+    at next (C:\Users\hchen\newblog\node_modules\express\lib\router\index.js:190:10)
+[Tue Jan 05 2016 16:27:09 GMT+1100 (AUS Eastern Daylight Time)] /
+TypeError: Cannot read property 'name' of null
+    at C:\Users\hchen\newblog\routes\index.js:12:33
+    at Layer.handle [as handle_request] (C:\Users\hchen\newblog\node_modules\express\lib\router\layer.js:82:5)
+    at next (C:\Users\hchen\newblog\node_modules\express\lib\router\route.js:100:13)
+    at Route.dispatch (C:\Users\hchen\newblog\node_modules\express\lib\router\route.js:81:3)
+    at Layer.handle [as handle_request] (C:\Users\hchen\newblog\node_modules\express\lib\router\layer.js:82:5)
+    at C:\Users\hchen\newblog\node_modules\express\lib\router\index.js:235:24
+    at Function.proto.process_params (C:\Users\hchen\newblog\node_modules\express\lib\router\index.js:313:12)
+    at C:\Users\hchen\newblog\node_modules\express\lib\router\index.js:229:12
+    at Function.match_layer (C:\Users\hchen\newblog\node_modules\express\lib\router\index.js:296:3)
+    at next (C:\Users\hchen\newblog\node_modules\express\lib\router\index.js:190:10)
+[Tue Jan 05 2016 16:27:11 GMT+1100 (AUS Eastern Daylight Time)] /
+TypeError: Cannot read property 'name' of null
+    at C:\Users\hchen\newblog\routes\index.js:12:33
+    at Layer.handle [as handle_request] (C:\Users\hchen\newblog\node_modules\express\lib\router\layer.js:82:5)
+    at next (C:\Users\hchen\newblog\node_modules\express\lib\router\route.js:100:13)
+    at Route.dispatch (C:\Users\hchen\newblog\node_modules\express\lib\router\route.js:81:3)
+    at Layer.handle [as handle_request] (C:\Users\hchen\newblog\node_modules\express\lib\router\layer.js:82:5)
+    at C:\Users\hchen\newblog\node_modules\express\lib\router\index.js:235:24
+    at Function.proto.process_params (C:\Users\hchen\newblog\node_modules\express\lib\router\index.js:313:12)
+    at C:\Users\hchen\newblog\node_modules\express\lib\router\index.js:229:12
+    at Function.match_layer (C:\Users\hchen\newblog\node_modules\express\lib\router\index.js:296:3)
+    at next (C:\Users\hchen\newblog\node_modules\express\lib\router\index.js:190:10)
+[Tue Jan 05 2016 16:27:19 GMT+1100 (AUS Eastern Daylight Time)] /
+TypeError: Cannot read property 'name' of null
+    at C:\Users\hchen\newblog\routes\index.js:12:33
+    at Layer.handle [as handle_request] (C:\Users\hchen\newblog\node_modules\express\lib\router\layer.js:82:5)
+    at next (C:\Users\hchen\newblog\node_modules\express\lib\router\route.js:100:13)
+    at Route.dispatch (C:\Users\hchen\newblog\node_modules\express\lib\router\route.js:81:3)
+    at Layer.handle [as handle_request] (C:\Users\hchen\newblog\node_modules\express\lib\router\layer.js:82:5)
+    at C:\Users\hchen\newblog\node_modules\express\lib\router\index.js:235:24
+    at Function.proto.process_params (C:\Users\hchen\newblog\node_modules\express\lib\router\index.js:313:12)
+    at C:\Users\hchen\newblog\node_modules\express\lib\router\index.js:229:12
+    at Function.match_layer (C:\Users\hchen\newblog\node_modules\express\lib\router\index.js:296:3)
+    at next (C:\Users\hchen\newblog\node_modules\express\lib\router\index.js:190:10)
+[Tue Jan 05 2016 16:43:08 GMT+1100 (AUS Eastern Daylight Time)] /
+ReferenceError: total is not defined
+    at C:\Users\hchen\newblog\routes\index.js:29:57
+    at Layer.handle [as handle_request] (C:\Users\hchen\newblog\node_modules\express\lib\router\layer.js:82:5)
+    at next (C:\Users\hchen\newblog\node_modules\express\lib\router\route.js:100:13)
+    at Route.dispatch (C:\Users\hchen\newblog\node_modules\express\lib\router\route.js:81:3)
+    at Layer.handle [as handle_request] (C:\Users\hchen\newblog\node_modules\express\lib\router\layer.js:82:5)
+    at C:\Users\hchen\newblog\node_modules\express\lib\router\index.js:235:24
+    at Function.proto.process_params (C:\Users\hchen\newblog\node_modules\express\lib\router\index.js:313:12)
+    at C:\Users\hchen\newblog\node_modules\express\lib\router\index.js:229:12
+    at Function.match_layer (C:\Users\hchen\newblog\node_modules\express\lib\router\index.js:296:3)
+    at next (C:\Users\hchen\newblog\node_modules\express\lib\router\index.js:190:10)
+[Tue Jan 05 2016 16:43:12 GMT+1100 (AUS Eastern Daylight Time)] /
+ReferenceError: total is not defined
+    at C:\Users\hchen\newblog\routes\index.js:29:57
+    at Layer.handle [as handle_request] (C:\Users\hchen\newblog\node_modules\express\lib\router\layer.js:82:5)
+    at next (C:\Users\hchen\newblog\node_modules\express\lib\router\route.js:100:13)
+    at Route.dispatch (C:\Users\hchen\newblog\node_modules\express\lib\router\route.js:81:3)
+    at Layer.handle [as handle_request] (C:\Users\hchen\newblog\node_modules\express\lib\router\layer.js:82:5)
+    at C:\Users\hchen\newblog\node_modules\express\lib\router\index.js:235:24
+    at Function.proto.process_params (C:\Users\hchen\newblog\node_modules\express\lib\router\index.js:313:12)
+    at C:\Users\hchen\newblog\node_modules\express\lib\router\index.js:229:12
+    at Function.match_layer (C:\Users\hchen\newblog\node_modules\express\lib\router\index.js:296:3)
+    at next (C:\Users\hchen\newblog\node_modules\express\lib\router\index.js:190:10)
+[Tue Jan 05 2016 16:43:24 GMT+1100 (AUS Eastern Daylight Time)] /
+ReferenceError: total is not defined
+    at C:\Users\hchen\newblog\routes\index.js:29:57
+    at Layer.handle [as handle_request] (C:\Users\hchen\newblog\node_modules\express\lib\router\layer.js:82:5)
+    at next (C:\Users\hchen\newblog\node_modules\express\lib\router\route.js:100:13)
+    at Route.dispatch (C:\Users\hchen\newblog\node_modules\express\lib\router\route.js:81:3)
+    at Layer.handle [as handle_request] (C:\Users\hchen\newblog\node_modules\express\lib\router\layer.js:82:5)
+    at C:\Users\hchen\newblog\node_modules\express\lib\router\index.js:235:24
+    at Function.proto.process_params (C:\Users\hchen\newblog\node_modules\express\lib\router\index.js:313:12)
+    at C:\Users\hchen\newblog\node_modules\express\lib\router\index.js:229:12
+    at Function.match_layer (C:\Users\hchen\newblog\node_modules\express\lib\router\index.js:296:3)
+    at next (C:\Users\hchen\newblog\node_modules\express\lib\router\index.js:190:10)
+[Tue Jan 05 2016 16:43:44 GMT+1100 (AUS Eastern Daylight Time)] /
+ReferenceError: total is not defined
+    at C:\Users\hchen\newblog\routes\index.js:29:57
+    at Layer.handle [as handle_request] (C:\Users\hchen\newblog\node_modules\express\lib\router\layer.js:82:5)
+    at next (C:\Users\hchen\newblog\node_modules\express\lib\router\route.js:100:13)
+    at Route.dispatch (C:\Users\hchen\newblog\node_modules\express\lib\router\route.js:81:3)
+    at Layer.handle [as handle_request] (C:\Users\hchen\newblog\node_modules\express\lib\router\layer.js:82:5)
+    at C:\Users\hchen\newblog\node_modules\express\lib\router\index.js:235:24
+    at Function.proto.process_params (C:\Users\hchen\newblog\node_modules\express\lib\router\index.js:313:12)
+    at C:\Users\hchen\newblog\node_modules\express\lib\router\index.js:229:12
+    at Function.match_layer (C:\Users\hchen\newblog\node_modules\express\lib\router\index.js:296:3)
+    at next (C:\Users\hchen\newblog\node_modules\express\lib\router\index.js:190:10)
+[Tue Jan 05 2016 16:47:06 GMT+1100 (AUS Eastern Daylight Time)] /
+ReferenceError: posts is not defined
+    at C:\Users\hchen\newblog\routes\index.js:27:16
+    at Layer.handle [as handle_request] (C:\Users\hchen\newblog\node_modules\express\lib\router\layer.js:82:5)
+    at next (C:\Users\hchen\newblog\node_modules\express\lib\router\route.js:100:13)
+    at Route.dispatch (C:\Users\hchen\newblog\node_modules\express\lib\router\route.js:81:3)
+    at Layer.handle [as handle_request] (C:\Users\hchen\newblog\node_modules\express\lib\router\layer.js:82:5)
+    at C:\Users\hchen\newblog\node_modules\express\lib\router\index.js:235:24
+    at Function.proto.process_params (C:\Users\hchen\newblog\node_modules\express\lib\router\index.js:313:12)
+    at C:\Users\hchen\newblog\node_modules\express\lib\router\index.js:229:12
+    at Function.match_layer (C:\Users\hchen\newblog\node_modules\express\lib\router\index.js:296:3)
+    at next (C:\Users\hchen\newblog\node_modules\express\lib\router\index.js:190:10)
+[Tue Jan 05 2016 16:49:35 GMT+1100 (AUS Eastern Daylight Time)] /
+ReferenceError: posts is not defined
+    at C:\Users\hchen\newblog\routes\index.js:27:16
+    at Layer.handle [as handle_request] (C:\Users\hchen\newblog\node_modules\express\lib\router\layer.js:82:5)
+    at next (C:\Users\hchen\newblog\node_modules\express\lib\router\route.js:100:13)
+    at Route.dispatch (C:\Users\hchen\newblog\node_modules\express\lib\router\route.js:81:3)
+    at Layer.handle [as handle_request] (C:\Users\hchen\newblog\node_modules\express\lib\router\layer.js:82:5)
+    at C:\Users\hchen\newblog\node_modules\express\lib\router\index.js:235:24
+    at Function.proto.process_params (C:\Users\hchen\newblog\node_modules\express\lib\router\index.js:313:12)
+    at C:\Users\hchen\newblog\node_modules\express\lib\router\index.js:229:12
+    at Function.match_layer (C:\Users\hchen\newblog\node_modules\express\lib\router\index.js:296:3)
+    at next (C:\Users\hchen\newblog\node_modules\express\lib\router\index.js:190:10)
+[Tue Jan 05 2016 16:52:03 GMT+1100 (AUS Eastern Daylight Time)] /
+ReferenceError: posts is not defined
+    at C:\Users\hchen\newblog\routes\index.js:27:16
+    at Layer.handle [as handle_request] (C:\Users\hchen\newblog\node_modules\express\lib\router\layer.js:82:5)
+    at next (C:\Users\hchen\newblog\node_modules\express\lib\router\route.js:100:13)
+    at Route.dispatch (C:\Users\hchen\newblog\node_modules\express\lib\router\route.js:81:3)
+    at Layer.handle [as handle_request] (C:\Users\hchen\newblog\node_modules\express\lib\router\layer.js:82:5)
+    at C:\Users\hchen\newblog\node_modules\express\lib\router\index.js:235:24
+    at Function.proto.process_params (C:\Users\hchen\newblog\node_modules\express\lib\router\index.js:313:12)
+    at C:\Users\hchen\newblog\node_modules\express\lib\router\index.js:229:12
+    at Function.match_layer (C:\Users\hchen\newblog\node_modules\express\lib\router\index.js:296:3)
+    at next (C:\Users\hchen\newblog\node_modules\express\lib\router\index.js:190:10)
+[Tue Jan 05 2016 16:54:01 GMT+1100 (AUS Eastern Daylight Time)] /
+ReferenceError: posts is not defined
+    at C:\Users\hchen\newblog\routes\index.js:27:16
+    at Layer.handle [as handle_request] (C:\Users\hchen\newblog\node_modules\express\lib\router\layer.js:82:5)
+    at next (C:\Users\hchen\newblog\node_modules\express\lib\router\route.js:100:13)
+    at Route.dispatch (C:\Users\hchen\newblog\node_modules\express\lib\router\route.js:81:3)
+    at Layer.handle [as handle_request] (C:\Users\hchen\newblog\node_modules\express\lib\router\layer.js:82:5)
+    at C:\Users\hchen\newblog\node_modules\express\lib\router\index.js:235:24
+    at Function.proto.process_params (C:\Users\hchen\newblog\node_modules\express\lib\router\index.js:313:12)
+    at C:\Users\hchen\newblog\node_modules\express\lib\router\index.js:229:12
+    at Function.match_layer (C:\Users\hchen\newblog\node_modules\express\lib\router\index.js:296:3)
+    at next (C:\Users\hchen\newblog\node_modules\express\lib\router\index.js:190:10)
+[Tue Jan 05 2016 16:56:19 GMT+1100 (AUS Eastern Daylight Time)] /
+ReferenceError: posts is not defined
+    at C:\Users\hchen\newblog\routes\index.js:28:16
+    at Layer.handle [as handle_request] (C:\Users\hchen\newblog\node_modules\express\lib\router\layer.js:82:5)
+    at next (C:\Users\hchen\newblog\node_modules\express\lib\router\route.js:100:13)
+    at Route.dispatch (C:\Users\hchen\newblog\node_modules\express\lib\router\route.js:81:3)
+    at Layer.handle [as handle_request] (C:\Users\hchen\newblog\node_modules\express\lib\router\layer.js:82:5)
+    at C:\Users\hchen\newblog\node_modules\express\lib\router\index.js:235:24
+    at Function.proto.process_params (C:\Users\hchen\newblog\node_modules\express\lib\router\index.js:313:12)
+    at C:\Users\hchen\newblog\node_modules\express\lib\router\index.js:229:12
+    at Function.match_layer (C:\Users\hchen\newblog\node_modules\express\lib\router\index.js:296:3)
+    at next (C:\Users\hchen\newblog\node_modules\express\lib\router\index.js:190:10)
+[Tue Jan 05 2016 17:06:44 GMT+1100 (AUS Eastern Daylight Time)] /
+ReferenceError: posts is not defined
+    at C:\Users\hchen\newblog\routes\index.js:41:40
+    at Layer.handle [as handle_request] (C:\Users\hchen\newblog\node_modules\express\lib\router\layer.js:82:5)
+    at next (C:\Users\hchen\newblog\node_modules\express\lib\router\route.js:100:13)
+    at Route.dispatch (C:\Users\hchen\newblog\node_modules\express\lib\router\route.js:81:3)
+    at Layer.handle [as handle_request] (C:\Users\hchen\newblog\node_modules\express\lib\router\layer.js:82:5)
+    at C:\Users\hchen\newblog\node_modules\express\lib\router\index.js:235:24
+    at Function.proto.process_params (C:\Users\hchen\newblog\node_modules\express\lib\router\index.js:313:12)
+    at C:\Users\hchen\newblog\node_modules\express\lib\router\index.js:229:12
+    at Function.match_layer (C:\Users\hchen\newblog\node_modules\express\lib\router\index.js:296:3)
+    at next (C:\Users\hchen\newblog\node_modules\express\lib\router\index.js:190:10)

@@ -8,12 +8,17 @@ module.exports = function(app) {
   app.get('/', function (req, res) {
     //判断是否是第一页，并把请求的页数转换成 number 类型
     var page = req.query.p ? parseInt(req.query.p) : 1;
-    //查询并返回第 page 页的 10 篇文章
-    Post.getTen(null, page, function (err, posts, total) {
-      if (err) {
-        posts = [];
-      } 
-      res.render('index', {
+    if (req.session.user) {
+      console.log(req.session.user.name);
+      //查询并返回第 page 页的 10 篇文章
+      Post.getTen(req.session.user.name, page, function (err, posts, total) {
+        if (err) {
+          posts = [];
+          console.log("cannot get data");
+        }
+        console.log(posts); 
+
+        res.render('index', {
         title: '主页',
         posts: posts,
         page: page,
@@ -22,8 +27,24 @@ module.exports = function(app) {
         user: req.session.user,
         success: req.flash('success').toString(),
         error: req.flash('error').toString()
+        });
       });
-    });
+
+    }
+    else{
+      res.render('index', {
+        title: '主页',
+        posts: [],
+        page: 1,
+        isFirstPage: true,
+        isLastPage: true,
+        user: null,
+        success: req.flash('success').toString(),
+        error: req.flash('error').toString()
+        });
+    }
+    
+    
   });
 
   app.get('/reg', checkNotLogin);
