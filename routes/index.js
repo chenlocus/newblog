@@ -9,14 +9,12 @@ module.exports = function(app) {
     //判断是否是第一页，并把请求的页数转换成 number 类型
     var page = req.query.p ? parseInt(req.query.p) : 1;
     if (req.session.user) {
-      console.log(req.session.user.name);
       //查询并返回第 page 页的 10 篇文章
       Post.getTen(req.session.user.name, page, function (err, posts, total) {
         if (err) {
           posts = [];
           console.log("cannot get data");
         }
-        console.log(posts); 
 
         res.render('index', {
         title: '主页',
