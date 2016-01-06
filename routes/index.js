@@ -387,6 +387,20 @@ module.exports = function(app) {
     });
   });
 
+
+  //added for profile begin
+  app.get('/profile', checkLogin);
+  app.get('/profile', function (req, res) {
+    res.render('profile', {
+      title: '注册',
+      user: req.session.user,
+      success: req.flash('success').toString(),
+      error: req.flash('error').toString()
+    });
+  });
+
+  //added for profile end
+
   app.use(function (req, res) {
     res.render("404");
   });
