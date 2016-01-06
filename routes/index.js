@@ -392,7 +392,7 @@ module.exports = function(app) {
   app.get('/profile', checkLogin);
   app.get('/profile', function (req, res) {
     res.render('profile', {
-      title: '注册',
+      title: '个人资料',
       user: req.session.user,
       success: req.flash('success').toString(),
       error: req.flash('error').toString()
@@ -400,6 +400,19 @@ module.exports = function(app) {
   });
 
   //added for profile end
+
+  //added for edit profile begin
+  app.get('/editprofile/:name', checkLogin);
+  app.get('/editprofile/:name', function (req, res) {
+    res.render('editprofile', {
+      title: '个人资料编辑',
+      user: req.session.user,
+      success: req.flash('success').toString(),
+      error: req.flash('error').toString()
+    });
+  });
+
+  //added for edit profile end
 
   app.use(function (req, res) {
     res.render("404");
