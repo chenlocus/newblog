@@ -412,6 +412,25 @@ module.exports = function(app) {
     });
   });
 
+  app.post('/editprofile/:name/:email', checkLogin);
+  app.post('/editprofile/:name/:email', function (req, res) {
+    var currentUser = req.session.user;
+    User.update(currentUser.name, req.body.email, function (err) {
+      if (err) {
+        req.flash('error', err); 
+        return res.redirect('/');//出错！返回文章页
+      }
+      req.session.user.email=req.body.email;
+      req.flash('success', '修改成功!');
+      res.render('editprofile', {
+        title: '个人资料编辑',
+        user: req.session.user,
+        success: req.flash('success').toString(),
+        error: req.flash('error').toString()
+      });
+    });
+  });
+
   //added for edit profile end
 
   app.use(function (req, res) {
