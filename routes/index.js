@@ -436,6 +436,7 @@ module.exports = function(app) {
 
   //added for edit profile end
 
+<<<<<<< HEAD
   //add friendlist begin
   app.get('/friendlist', checkLogin);
   app.get('/friendlist', function (req, res) {
@@ -562,6 +563,8 @@ module.exports = function(app) {
 
   //add friendlist end.
 
+=======
+>>>>>>> origin/master
   app.use(function (req, res) {
     res.render("404");
   });
