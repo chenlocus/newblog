@@ -1,0 +1,50 @@
+<%- include header %>
+
+<% if (user) { %>
+
+<p>
+<form action="/SearchUser" method="GET" id="searchForm">
+  <input type="text" name="s" placeholder="Search..." id ="s">
+  <input type="submit" value="Search">
+</form>
+
+<div id="divResults"></div>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js">
+</script>
+
+<script type="text/javascript">
+$( document ).ready(function() {
+  console.log( "ready!" );
+  var frm = $('#searchForm');
+  frm.submit(function( event ) {
+    event.preventDefault();
+    console.log("entering submit");
+    // Get some values from elements on the page:
+    $.ajax({
+      type: frm.attr('method'),
+      data: {name:"gentlesp"},
+      url: frm.attr('action'), 
+      error: function (xhr, ajaxOptions, thrownError) {
+        console.log("Status: " + xhr.status);
+        console.log("Message: " + thrownError);
+      },
+      success: function(response) {
+        console.log("success");
+        console.log(response);
+        $('#divResults').html(response);
+      }
+    });
+  });
+  console.log("submit");
+});
+
+</script>
+
+</p>
+
+<% } %>
+<%- include footer %>
+
+
+

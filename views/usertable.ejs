@@ -1,0 +1,68 @@
+<form  method="POST" id="addform">
+<table border="1" style="width:100%"> <button onclick="addFunction(event)">增加</button>
+    <tr>
+        <th>用户名</th>
+        <th colspan="3">兴趣分类</th>
+        <th>增加/删除</th>
+    </tr>   
+    <tr id ="row1">
+        <td><%= userlist.name %></td>
+        <td><input type="text" name="tag1" style="width: 50px"/> </td>
+        <td><input type="text" name="tag2" style="width: 50px"/> </td>
+        <td><input type="text" name="tag3" style="width: 50px"/></td>
+        <td id= "result"></td>        
+    </tr>
+</table>
+</form>
+<script>
+  function addFunction(e) {
+    var addfrm = $('#addform');
+    e.preventDefault();
+    console.log("entering add form");
+    var Row = document.getElementById("row1");
+    var Cells = Row.getElementsByTagName("td");
+
+    //name = addfrm.find( "input[name='name']" ).val();
+    tag1 = addfrm.find( "input[name='tag1']" ).val();
+    tag2 = addfrm.find( "input[name='tag2']" ).val();
+    tag3 = addfrm.find( "input[name='tag3']" ).val();
+    // Get some values from elements on the page:
+    name = Cells[0].innerText;
+    var newfriend = {
+            'name': name,
+            'tag1': tag1,
+            'tag2': tag2,
+            'tag3': tag3
+        };
+        console.log(name);
+        console.log(tag1);
+        console.log(tag2);
+        console.log(tag3);
+        // Use AJAX to post the object to our addfriend service
+        $.ajax({
+            type: 'POST',
+            data: newfriend,
+            url: '/addfriend',
+            error: function (xhr, ajaxOptions, thrownError) {
+                        console.log("Status: " + xhr.status);
+                        console.log("Message: " + thrownError);
+                    },
+            success: function(response) {
+                console.log("sent add friend");
+                if (response.msg === '') {
+                    document.getElementById('result').innerText ='已添加';
+                }
+                else {
+
+                    // If something goes wrong, alert the error message that our service returned
+                    console.log("post addfriend failed");
+                    document.getElementById('result').innerText ='重复了';
+
+                }
+            }
+
+        });
+    
+   };
+
+</script>

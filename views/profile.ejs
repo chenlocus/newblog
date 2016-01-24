@@ -1,0 +1,37 @@
+<%- include header %>
+
+<article class="tabs">
+
+  <section id="myinfo">
+    <h2><a href="#myinfo">个人资料</a></h2>
+    <p>
+      <% if (user) { %>
+        <p>
+        个人资料 <a class="edit" href="/editprofile/<%= user.name%>">编辑</a>
+        </p>
+        <p class="info">
+        用户名：<%= user.name %><br />
+        email：<%= user.email %><br />
+        </p>
+      <% } %>
+      </p>
+  </section>
+  
+  <section id="chgpwd">
+    <h2><a href="#chgpwd">更改密码</a></h2>
+    <p>改密码         </p>
+  </section>
+  
+  <section id="friendlist">
+    <h2><a href="/friendlist">好友列表</a></h2>
+  </section>
+
+  <section id="blacklist">
+    <h2><a href="/blacklist">黑名单</a></h2>
+  </section>
+
+</article>
+
+
+  
+<%- include footer %>

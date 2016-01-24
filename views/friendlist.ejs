@@ -1,0 +1,36 @@
+<%- include header %>
+<% if (user){ %>
+<p>
+朋友类别
+<% if (tags) { %>
+<% tags.forEach(function (tag, index) { %>
+    <% if (tag) { %>
+      <a class="tag" href="/friends/<%= tag %>"><%= tag %></a>
+    <% } %>
+<% }) %>
+<% } %><br />
+
+<span><a class="edit" href="/addfriend/<%= user.name %>">增加</a></span><br />
+
+<table style="width:100%">
+<tr>
+    <th>用户名</th>
+    <th>兴趣分类</th>
+</tr>
+<% if (friends) { %>   
+<% friends.forEach(function (friend, index) { %>
+  <tr>
+    <td><%=friend.friend_name%></td>
+    <%  friend.tags.forEach(function (tag) { %>
+    <td><%=tag%></td>
+    <% }) %>
+  </tr>
+<% }) %>
+<% } %>
+</table>
+
+</p>
+
+<% } %>
+<%- include footer %>
+

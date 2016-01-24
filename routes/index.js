@@ -2,18 +2,24 @@ var crypto = require('crypto'),
     fs = require('fs'),
     User = require('../models/user.js'),
     Post = require('../models/post.js'),
+    //friend add begin
+    Friend = require('../models/friend.js'),
+    //friend add end
     Comment = require('../models/comment.js');
 
 module.exports = function(app) {
   app.get('/', function (req, res) {
     //判断是否是第一页，并把请求的页数转换成 number 类型
     var page = req.query.p ? parseInt(req.query.p) : 1;
-    //查询并返回第 page 页的 10 篇文章
-    Post.getTen(null, page, function (err, posts, total) {
-      if (err) {
-        posts = [];
-      } 
-      res.render('index', {
+    if (req.session.user) {
+      //查询并返回第 page 页的 10 篇文章
+      Post.getTen(req.session.user.name, page, function (err, posts, total) {
+        if (err) {
+          posts = [];
+          console.log("cannot get data");
+        }
+
+        res.render('index', {
         title: '主页',
         posts: posts,
         page: page,
@@ -22,8 +28,24 @@ module.exports = function(app) {
         user: req.session.user,
         success: req.flash('success').toString(),
         error: req.flash('error').toString()
+        });
       });
-    });
+
+    }
+    else{
+      res.render('index', {
+        title: '主页',
+        posts: [],
+        page: 1,
+        isFirstPage: true,
+        isLastPage: true,
+        user: null,
+        success: req.flash('success').toString(),
+        error: req.flash('error').toString()
+        });
+    }
+    
+    
   });
 
   app.get('/reg', checkNotLogin);
@@ -367,6 +389,178 @@ module.exports = function(app) {
       });
     });
   });
+
+
+  //added for profile begin
+  app.get('/profile', checkLogin);
+  app.get('/profile', function (req, res) {
+    res.render('profile', {
+      title: '个人资料',
+      user: req.session.user,
+      success: req.flash('success').toString(),
+      error: req.flash('error').toString()
+    });
+  });
+
+  //added for profile end
+
+  //added for edit profile begin
+  app.get('/editprofile/:name', checkLogin);
+  app.get('/editprofile/:name', function (req, res) {
+    res.render('editprofile', {
+      title: '个人资料编辑',
+      user: req.session.user,
+      success: req.flash('success').toString(),
+      error: req.flash('error').toString()
+    });
+  });
+
+  app.post('/editprofile/:name/:email', checkLogin);
+  app.post('/editprofile/:name/:email', function (req, res) {
+    var currentUser = req.session.user;
+    User.update(currentUser.name, req.body.email, function (err) {
+      if (err) {
+        req.flash('error', err); 
+        return res.redirect('/');//出错！返回文章页
+      }
+      req.session.user.email=req.body.email;
+      req.flash('success', '修改成功!');
+      res.render('editprofile', {
+        title: '个人资料编辑',
+        user: req.session.user,
+        success: req.flash('success').toString(),
+        error: req.flash('error').toString()
+      });
+    });
+  });
+
+  //added for edit profile end
+
+  //add friendlist begin
+  app.get('/friendlist', checkLogin);
+  app.get('/friendlist', function (req, res) {
+    Friend.getAllFriends(req.session.user.name, function (err, friends) {
+      if (err) {
+        req.flash('error', err); 
+        return res.redirect('/');
+      }
+      Friend.getTags(req.session.user.name, function(err, tags){
+        if (err) {
+          req.flash('error', err); 
+          return res.redirect('/');
+        } 
+        console.log("get friendlist");
+        console.log(friends);
+        console.log(tags);
+        if (friends){
+          console.log("have friends");
+          res.render('friendlist', {
+            title: '朋友列表',
+            friends: friends,
+            user: req.session.user,
+            tags: tags,
+            success: req.flash('success').toString(),
+            error: req.flash('error').toString()
+          });
+        } else{
+          console.log("go to addfriend");
+          var url = encodeURI('/addfriend/' + req.session.user.name);
+          return res.redirect(url);//出错！加朋友去
+      
+        }
+      });
+    });
+  });
+
+  app.get('/addfriend/:name', checkLogin);
+  console.log("pass check addfriend");
+  app.get('/addfriend/:name', function (req, res) {
+      console.log(req.params.name);
+      console.log(req.session.user.name);
+      if (req.params.name!=req.session.user.name)
+      {
+        console.log("failed addfriend");
+        req.flash('error', "你在为别人增加朋友！");
+        return res.redirect('/');
+      }
+      console.log("addfriend");
+      res.render('addfriend', {
+        title: '增加朋友',
+        user: req.session.user,
+        success: req.flash('success').toString(),
+        error: req.flash('error').toString()
+      });
+  });
+
+  // app.post('/addfriend/:name/:tag1/:tag2/:tag3', checkLogin);
+  // app.post('/addfriend/:name/:tag1/:tag2/:tag3', function (req, res) {
+  app.post('/addfriend', checkLogin);
+  app.post('/addfriend', function (req, res) {
+      var name = req.session.user.name,
+          friend_name = req.body.name,
+          tags = [req.body.tag1, req.body.tag2, req.body.tag3];
+      console.log("enter post/addfriend");
+      var newFriend = new Friend({
+                       name: name,
+                       friend_name:friend_name,
+                       tags: tags
+      });
+    //检查输入朋友是否已经存在
+    Friend.get(name,friend_name,function (err, newfriend) {
+      console.log("line 511");
+      if (newfriend) {
+        console.log("friend already exist");
+        res.send({msg:'friend already exist'});
+        return;
+      }
+      console.log("line 515");
+      newFriend.add(function (err) {
+        console.log("begin to insert friends");
+        if (err) {
+          console.log(err);
+          req.flash('error', err);
+        }
+        res.send(
+            (err === null) ? { msg: '' } : { msg: err }
+        );
+      });
+    }); 
+  });
+
+
+  app.get('/SearchUser', checkLogin);
+  app.get('/SearchUser', function (req, res) {
+      console.log("entering search user response");
+      var username = req.query.name;
+      console.log(username);
+      User.get(username, function (err, user) {
+      if (!user) {
+        req.flash('error', '用户不存在!'); 
+        return res.redirect('/login');//用户不存在则跳转到登录页
+      }
+      console.log("search user response");
+      //res.writeHead(200, {"Content-Type": "application/json"});
+      //var otherArray = ["item1", "item2"];
+      //var otherObject = { item1: "item1val", item2: "item2val" };
+      //var json = JSON.stringify({ 
+      //      anObject: otherObject, 
+      //      anArray: otherArray, 
+      //      another: "item"
+      //});
+      //var json = JSON.stringify(req.query);
+      //console.log(json);
+      //response.end(json);
+      //res.end(json);
+      console.log(user);
+      res.render('usertable', {
+        userlist: user,
+        success: req.flash('success').toString(),
+        error: req.flash('error').toString()
+      });
+    });
+  });
+
+  //add friendlist end.
 
   app.use(function (req, res) {
     res.render("404");

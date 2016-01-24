@@ -1,0 +1,7 @@
+<%- include header %>
+<form method="post" action="/editprofile/<%= user.name %>/<%= user.email %>">
+  用户名：  <input type="text" name="name" value="<%= user.name %>" disabled="disabled"/><br />
+  邮箱：    <input type="email" name="email" value="<%= user.email %>"/><br />
+           <input type="submit" value="保存修改"/>
+</form>
+<%- include footer %>
